@@ -1,1 +1,0 @@
-# tdp-random-quote
