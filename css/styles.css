@@ -3,7 +3,7 @@
 body {
   background-color: #36b55c;
   color: white;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 #quote-box {
@@ -12,7 +12,7 @@ body {
   left: 10%;
   right: 10%;
   width: 80%;
-  line-height: .5;
+  line-height: 0.5;
 }
 
 .quote {
@@ -23,7 +23,8 @@ body {
   margin: 0;
 }
 
-.quote:before, .quote:after {
+.quote:before,
+.quote:after {
   font-size: 6rem;
   line-height: 2.5rem;
   position: absolute;
@@ -31,19 +32,19 @@ body {
 
 .quote:before {
   content: "“";
-  top: .25em;
-  left: -.5em;
+  top: 0.25em;
+  left: -0.5em;
 }
 
 .quote:after {
   content: "”";
-  bottom: -.1em;
-  margin-left: .1em;
+  bottom: -0.1em;
+  margin-left: 0.1em;
   position: absolute;
 }
 
 .source {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: right;
@@ -68,6 +69,21 @@ body {
   font-style: normal;
 }
 
+.tag-block {
+  text-align: center;
+}
+
+.tags {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: white;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 0 5px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
@@ -78,12 +94,12 @@ body {
   border-radius: 4px;
   border: 2px solid #fff;
   color: #fff;
-  background-color: #36b55c;
+  background-color: rgba(255, 255, 255, 0.07);
   padding: 15px 0;
-  transition: .5s ;
+  transition: 0.5s;
 }
 #loadQuote:hover {
-  background-color: rgba(255,255,255,.25);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 #loadQuote:focus {
@@ -94,7 +110,8 @@ body {
   .quote {
     font-size: 2.5rem;
   }
-  .quote:before, .quote:after {
+  .quote:before,
+  .quote:after {
     font-size: 3rem;
   }
   .source {
