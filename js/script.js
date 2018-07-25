@@ -108,7 +108,7 @@ function printQuote() {
 }
 
 // Setting the timer OUTSIDE of the function so it does not require a button press
-let timedQuote = setInterval(printQuote, 5000);
+let timedQuote = setInterval(printQuote, 20000);
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
