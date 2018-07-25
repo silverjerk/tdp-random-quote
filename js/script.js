@@ -2,7 +2,7 @@
 
 // Create the array of quote objects and name it quotes
 
-var quotes = [
+const quotes = [
   {
     quote: "Superman is the best Alien",
     source: "Lois Lane",
@@ -57,7 +57,7 @@ var quotes = [
 
 // Create the getRandomQuuote function and name it getRandomQuote
 
-function getRandomQuote(arr) {
+const getRandomQuote = (arr) => {
   // Storing a random item from the provided argument's array
   let randomQuote = arr[Math.floor(Math.random() * arr.length)];
   return randomQuote;
@@ -65,39 +65,39 @@ function getRandomQuote(arr) {
 
 // Create the printQuote funtion and name it printQuote
 
-function printQuote() {
+const printQuote = () => {
   // Storing our random quote function within a variable to more succinctly build our HTML
   let quoteRes = getRandomQuote(quotes);
   // Creating an empty string variable for our HTML
   let quoteHTML = "";
   // Formating our return results using the contents of the random quote generator
-  quoteHTML += '<p class="quote">' + quoteRes.quote + "</p>";
-  quoteHTML += '<p class="source">' + quoteRes.source;
+  quoteHTML += `<p class="quote">${quoteRes.quote}</p>`;
+  quoteHTML += `<p class="source">${quoteRes.source}`;
   // Using an if statement to check if the Citation value has data, and if it does, we display it in the HTML
   if (quoteRes.citation != null) {
-    quoteHTML += '<span class="citation">' + quoteRes.citation + "</span>";
+    quoteHTML += `<span class="citation"> ${quoteRes.citation} </span>`;
   }
   // Using an if statement to check if the Year value has data, and if it does, we display it in the HTML
   if (quoteRes.year != null) {
-    quoteHTML += '<span class="year">' + quoteRes.year + "</span>";
+    quoteHTML += `<span class="year">${quoteRes.year}</span>`;
   }
   if (quoteRes.tags != null) {
-    quoteHTML += '<div class="tag-block">';
-    for (i = 0; i < quoteRes.tags.length; i += 1) {
-      quoteHTML += '<span class="tags">' + quoteRes.tags[i] + "</span>";
+    quoteHTML += `<div class="tag-block">`;
+    for (let i = 0; i < quoteRes.tags.length; i += 1) {
+      quoteHTML += `<span class="tags">${quoteRes.tags[i]}</span>`;
     }
-    quoteHTML += '</div>';
+    quoteHTML += `</div>`;
   }
-  quoteHTML += "</p>";
+  quoteHTML += `</p>`;
 
   // Creating a random background color to change when the quote changes
-  function randomBackground() {
+  const randomBackground = () => {
     // Storing rgb as separate variables so we can change each randomly
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     // Building our completed style variable
-    let backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    let backgroundColor = `rgb(${r},${g},${b})`;
 
     return document.body.style.background = backgroundColor;
   }
