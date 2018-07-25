@@ -55,11 +55,6 @@ var quotes = [
   }
 ];
 
-// Setting the timer OUTSIDE of the function so it does not require a button press
-let timedQuote = setInterval(printQuote, 20000);
-// Defining constant for button ID so we can use it later wherever it's needed
-const quote = document.getElementById("loadQuote");
-
 // Create the getRandomQuuote function and name it getRandomQuote
 
 function getRandomQuote(arr) {
@@ -95,23 +90,26 @@ function printQuote() {
   }
   quoteHTML += "</p>";
 
+  // Creating a random background color to change when the quote changes
+  function randomBackground() {
+    // Storing rgb as separate variables so we can change each randomly
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    // Building our completed style variable
+    let backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+    return document.body.style.background = backgroundColor;
+  }
+  randomBackground();
+
   // Returning the now-complete variable for our random quote generator
   return document.getElementById("quote-box").innerHTML = quoteHTML;
 }
 
-function randomBackground() {
-  // Storing rgb as separate variables so we can change each randomly
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  // Building our completed style variable
-  let backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-
-  return document.body.style.background = backgroundColor;
-}
-
+// Setting the timer OUTSIDE of the function so it does not require a button press
+let timedQuote = setInterval(printQuote, 5000);
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-quote.addEventListener("click", printQuote, false);
-quote.addEventListener("click", randomBackground);
+document.getElementById("loadQuote").addEventListener("click", printQuote, false);
